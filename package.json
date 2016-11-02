@@ -1,0 +1,22 @@
+{
+  "name": "codice-fiscale",
+  "version": "0.0.5",
+  "description": "Calcolo Codice Ficsale Italiano",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "codice",
+    "fiscale",
+    "calcolo",
+    "tasse"
+  ],
+  "author": "Yuri Cozzolino (yuco91)",
+  "license": "ISC",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuco91/codice-fiscale.git"
+  }
+}
