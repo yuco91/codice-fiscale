@@ -4,7 +4,7 @@
   "description": "Calcolo Codice Ficsale Italiano",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "codice",
@@ -20,5 +20,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/yuco91/codice-fiscale.git"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
   }
 }
