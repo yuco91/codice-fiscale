@@ -14,7 +14,9 @@
   ],
   "author": "Yuri Cozzolino (yuco91)",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "jsonp": "^0.2.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/yuco91/codice-fiscale.git"
