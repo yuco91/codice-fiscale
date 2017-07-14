@@ -1,7 +1,5 @@
-var fs = require('fs')
-var path = require('path')
 
-var comuniJson = __dirname + path.sep + 'comuni.json' // @TODO spostare in una sottocartella
+var comuniJson = require('comuni.json')
 
 var tavolaMesi = ['A', 'B', 'C', 'D', 'E', 'H', 'L', 'M', 'P', 'R', 'S', 'T']
 
@@ -92,8 +90,7 @@ function calcolaCodiceComune (comune, provincia = null) {
   var comuneEscaped = comune.replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:])/g, '\\$1')
   var reEx = new RegExp('^\\b' + comuneEscaped + '$', 'ig')
 
-  var jsonFile = fs.readFileSync(comuniJson)
-  var parsedJSON = JSON.parse(jsonFile)
+  var parsedJSON = JSON.parse(comuniJson)
 
   var comuneResultObj = parsedJSON.filter(function (el) {
     if (provincia !== null) {
@@ -106,7 +103,7 @@ function calcolaCodiceComune (comune, provincia = null) {
   return comuneResultObj[0].codice
 }
 
-function calcolaCodice (nome, cognome, sesso,
+function calcolaCodiceFiscale (nome, cognome, sesso,
   dataNascitaGG, dataNascitaMM, dataNascitaYY,
   luogoNascita, provinciaNascita = null) {
   var codiceFiscaleWOCheckdigit =
@@ -122,7 +119,5 @@ function calcolaCodice (nome, cognome, sesso,
   return codiceFiscale
 }
 
-var publicFunctions = {
-  calcola: calcolaCodice
-}
-module.exports = publicFunctions
+
+module.exports = calcolaCodiceFiscale
