@@ -62,7 +62,8 @@ function calcolaNome(nome) {
 }
 
 function calcolaDataSesso(gg, mm, aa, sesso) {
-  if (sesso.toUpperCase() != "M" || sesso.toUpperCase() != "F") {
+  console.log("SESSO => ", sesso)
+  if (sesso.toUpperCase() != "M" && sesso.toUpperCase() != "F") {
     throw new Error("Valorizzare il campo sesso")
   }
   var d = new Date()
@@ -123,7 +124,7 @@ function calcolaCodiceComune(comune, provincia = null) {
 function calcolaCodiceFiscale(nome, cognome, sesso,
   dataNascitaGG, dataNascitaMM, dataNascitaYY,
   luogoNascita, provinciaNascita = null) {
-  try {
+
     var codiceFiscaleWOCheckdigit =
       calcolaCognome(cognome)
       + calcolaNome(nome)
@@ -135,10 +136,7 @@ function calcolaCodiceFiscale(nome, cognome, sesso,
       + calcolaCheckdigit(codiceFiscaleWOCheckdigit)
 
     return codiceFiscale
-  } catch (e) {
-    console.error(e);
-    return e.message;
-  }
+  
 }
 
-module.exports.calcolaCodiceFiscale = calcolaCodiceFiscale
+module.exports = calcolaCodiceFiscale

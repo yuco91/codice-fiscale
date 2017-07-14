@@ -8,9 +8,39 @@ The Codice Fiscale in italy is the equivalent to social security number in ameri
 
 ## Usage
 
+### JS:
+
 ```
- calcolaCodiceFiscale(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
+var cf = require('codice-fiscale')
+
+ cf(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
 ```
+
+### TS:
+
+```
+import cf from "codice-fiscale";
+
+var cf = require('codice-fiscale')
+
+ cf(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
+```
+
+### Throws:
+
+Exception if a field is not correct, you can get the error message in italian.
+Example:
+```
+import cf from "codice-fiscale";
+try{
+var cf = require('codice-fiscale')
+
+ cf(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
+}catch(e){
+    alert(e.message)
+}
+```
+
 
 ## License
 
