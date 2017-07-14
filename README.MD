@@ -13,7 +13,7 @@ The Codice Fiscale in italy is the equivalent to social security number in ameri
 ```
 var cf = require('codice-fiscale')
 
- cf(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
+ cf(name, surname, sex, birthDateDay, placeOfBirth, [stateOfBirth])
 ```
 
 ### TS:
@@ -23,7 +23,7 @@ import cf from "codice-fiscale";
 
 var cf = require('codice-fiscale')
 
- cf(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
+ cf(name, surname, sex, birthDate, placeOfBirth, [stateOfBirth])
 ```
 
 ### Throws:
@@ -35,7 +35,7 @@ import cf from "codice-fiscale";
 try{
 var cf = require('codice-fiscale')
 
- cf(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
+ cf(name, surname, sex, birthDate, placeOfBirth, [stateOfBirth])
 }catch(e){
     alert(e.message)
 }

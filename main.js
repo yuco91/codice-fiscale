@@ -36,7 +36,7 @@ function calcolaCognome(cognome) {
   codiceCognome = codiceCognome.substr(0, 3)
 
   if (codiceCognome == "") {
-    throw new Error("Impossibile calcolare il cognome")
+    throw new Error("surname")
   }
 
   return codiceCognome.toUpperCase()
@@ -55,31 +55,32 @@ function calcolaNome(nome) {
   }
 
   if (codiceNome == "") {
-    throw new Error("Impossibile calcolare il nome")
+    throw new Error("name")
   }
 
   return codiceNome.toUpperCase()
 }
 
-function calcolaDataSesso(gg, mm, aa, sesso) {
-  console.log("SESSO => ", sesso)
+function calcolaDataSesso(date,  sesso) {
   if (sesso.toUpperCase() != "M" && sesso.toUpperCase() != "F") {
-    throw new Error("Valorizzare il campo sesso")
+    throw new Error("sex")
   }
-  var d = new Date()
-  d.setYear(aa)
-  d.setMonth(mm - 1)
-  d.setDate(gg)
 
-  var anno = '0' + d.getFullYear()
-  anno = anno.substr(anno.length - 2, 2)
+  if (!(date instanceof Date)) {
+    throw new Error("date")
+  }
 
-  var mese = tavolaMesi[d.getMonth()]
+  var anno = date.getFullYear().toString()
+  anno = anno.slice(-2)
 
-  var giorno = d.getDate()
+  var mese = tavolaMesi[date.getMonth()]
+
+  var giorno = date.getDate()
   if (sesso.toUpperCase() === 'F') giorno += 40
-  giorno = '0' + giorno
-  giorno = giorno.substr(giorno.length - 2, 2)
+  
+    if(giorno < 10 ){
+      giorno = '0' + giorno
+    }
 
   return '' + anno + mese + giorno
 }
@@ -122,13 +123,13 @@ function calcolaCodiceComune(comune, provincia = null) {
 }
 
 function calcolaCodiceFiscale(nome, cognome, sesso,
-  dataNascitaGG, dataNascitaMM, dataNascitaYY,
+  dataNascita,
   luogoNascita, provinciaNascita = null) {
 
     var codiceFiscaleWOCheckdigit =
       calcolaCognome(cognome)
       + calcolaNome(nome)
-      + calcolaDataSesso(dataNascitaGG, dataNascitaMM, dataNascitaYY, sesso)
+      + calcolaDataSesso(dataNascita, sesso)
       + calcolaCodiceComune(luogoNascita, provinciaNascita)
 
     var codiceFiscale =
