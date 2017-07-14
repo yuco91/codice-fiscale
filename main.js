@@ -1,5 +1,5 @@
 
-var comuniJson = require('comuni.json')
+var comuniJson = require('./comuni.json')
 
 var tavolaMesi = ['A', 'B', 'C', 'D', 'E', 'H', 'L', 'M', 'P', 'R', 'S', 'T']
 
