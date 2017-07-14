@@ -141,4 +141,4 @@ function calcolaCodiceFiscale(nome, cognome, sesso,
   }
 }
 
-module.exports = calcolaCodiceFiscale
+module.exports.calcolaCodiceFiscale = calcolaCodiceFiscale

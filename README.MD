@@ -1,21 +1,20 @@
-Node.js - CALCOLO CODICE FISCALE ITALIANO
-================
+# CODICE FISCALE ITALIANO
 
-Calcolo Codice Fiscale Italiano
+The Codice Fiscale in italy is the equivalent to social security number in america. 
 
-Installation
-------------
+## Installation
 
     npm install --save codice-fiscale
 
-API
----
+## Usage
 
-### calcola(nome, cognome, sesso, dataNascitaGG, dataNascitaMM, dataNascitaYY, luogoNascita, [provinciaNascita])
+```
+ calcolaCodiceFiscale(name, surname, sex, birthDateDayDD, birthDateMonthMM, birthDateYearYYYY, placeOfBirth, [stateOfBirth])
+```
 
-License
--------
+## License
+
 
 (ISC License)
 
-Copyright 2016, yuco91 <yuco91@gmail.com>
+Forked from yuco91 <yuco91@gmail.com>
