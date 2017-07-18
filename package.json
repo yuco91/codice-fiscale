@@ -1,22 +1,28 @@
 {
   "name": "codice-fiscale",
-  "version": "0.0.5",
-  "description": "Calcolo Codice Ficsale Italiano",
+  "version": "1.0.0",
+  "description": "Get codice fiscale, italian ssn",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "codice",
     "fiscale",
     "calcolo",
-    "tasse"
+    "tasse",
+    "ssn"
   ],
-  "author": "Yuri Cozzolino (yuco91)",
+  "author": "Nicola Bonavita (topperblues), Yuri Cozzolino (yuco91)",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "jsonp": "^0.2.1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/yuco91/codice-fiscale.git"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
   }
 }
